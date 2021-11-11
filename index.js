@@ -12,7 +12,10 @@ app.use(express.urlencoded({extended: true}));
 app.listen(3000,function () {
     console.log('Server started. Listen on port 3000');
 })
-// tried with id 4 but only get the number 1
+app.listen(5000, function () {
+    console.log('Server started. Listen on port 5000')
+})
+
 app.get('/api/products/:id', (req, res) => {
     const id = req.params.id;
     const product = repoContext.products.findProductById(id);
